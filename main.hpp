@@ -24,7 +24,7 @@ int makeNameRecord(string state[], string gender[], int year[], string name[], i
     inputfile.open("babyname.txt");
     if(!inputfile){
         cerr << "Unable to open file";
-        exit(1); //terminate with error
+        exit(1); 
     }
     int coun = 0;
     while(inputfile >> state[coun] >> gender[coun] >> year[coun] >> name[coun] >> count[coun]){
@@ -38,9 +38,9 @@ int makeNameRecord(string state[], string gender[], int year[], string name[], i
 int findNames(int cnt, string state[], string gender[], int year[], string name[], int count[], char starting, string stname)
 {
     // TODO: print each record where the state matches `stname` and the name
-    for(int i = 0; i <= cnt; i++){
+    for(int i = 0; i < cnt; i++){
         name[i].rfind(starting, 0) == 0;
-        if (state[i] == stname && name[i].rfind(starting, 0)){
+        if (state[i] == stname && name[i].rfind(starting, 0) == 0){
             printoutcontents(state[i], gender[i], year[i], name[i], count[i]);
             cnt += 1; 
         }
