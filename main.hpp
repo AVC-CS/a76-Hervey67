@@ -42,7 +42,6 @@ int findNames(int cnt, string state[], string gender[], int year[], string name[
         name[i].rfind(starting, 0) == 0;
         if (state[i] == stname && name[i].rfind(starting, 0) == 0){
             printoutcontents(state[i], gender[i], year[i], name[i], count[i]);
-            cnt += 1; 
         }
     }
     return cnt;
