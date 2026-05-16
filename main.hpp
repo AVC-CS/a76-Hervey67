@@ -28,11 +28,11 @@ int makeNameRecord(string state[], string gender[], int year[], string name[], i
     }
     int coun = 0;
     while(inputfile >> state[coun] >> gender[coun] >> year[coun] >> name[coun] >> count[coun]){
-        cout << state << " " << gender << " " << year << " " << name << " " << count << endl;
+        cout << state[coun] << " " << gender[coun] << " " << year[coun] << " " << name[coun] << " " << count[coun] << endl;
         coun++;
     }
     inputfile.close();
-    cout << "Number of lines read: " << count << endl;
+    return coun; 
 }
 
 int findNames(int cnt, string state[], string gender[], int year[], string name[], int count[], char starting, string stname)
@@ -40,12 +40,12 @@ int findNames(int cnt, string state[], string gender[], int year[], string name[
     // TODO: print each record where the state matches `stname` and the name
     for(int i = 0; i <= cnt; i++){
         name[i].rfind(starting, 0) == 0;
-        if (state[i] == stname) and (state[i] == starting){
-            cout << printoutcontents(i);
+        if (state[i] == stname && name[i].rfind(starting, 0)){
+            printoutcontents(state[i], gender[i], year[i], name[i], count[i]);
             cnt += 1; 
         }
-        return cnt;
     }
+    return cnt;
 }
 
 void printoutallrecords(int cnt, string state[], string gender[], int year[], string name[], int count[])
