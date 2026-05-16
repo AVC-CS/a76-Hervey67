@@ -38,13 +38,14 @@ int makeNameRecord(string state[], string gender[], int year[], string name[], i
 int findNames(int cnt, string state[], string gender[], int year[], string name[], int count[], char starting, string stname)
 {
     // TODO: print each record where the state matches `stname` and the name
+    int matches = 0; 
     for(int i = 0; i < cnt; i++){
-        name[i].rfind(starting, 0) == 0;
         if (state[i] == stname && name[i].rfind(starting, 0) == 0){
             printoutcontents(state[i], gender[i], year[i], name[i], count[i]);
+            matches += 1;
         }
     }
-    return cnt;
+    return matches;
 }
 
 void printoutallrecords(int cnt, string state[], string gender[], int year[], string name[], int count[])
